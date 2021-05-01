@@ -122,11 +122,11 @@ async def genStr(_, msg: Message):
         return
     try:
         session_string = await client.export_session_string()
-        await client.send_message("me", f"#PYROGRAM #STRING_SESSION\n\n```{session_string}``` \n\n(tg://openmessage?user_id=1472531255) \nA Bot By @SDFBots")
+        await client.send_message("me", f"#PYROGRAM #STRING_SESSION\nYour Session String 👇🏾\n\n```{session_string}``` \n\nA Bot By @SDFBots")
         await client.disconnect()
-        text = "String Session is Successfully Generated.\nClick on Below Button."
+        text = "String Session is Successfully Generated.\nCheck Your Saved Messages."
         reply_markup = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Show String Session", url=f"tg://openmessage?user_id={chat.id}")]]
+            [[InlineKeyboardButton(text="Developers", url=f"https://t.me/SDFBots")]]
         )
         await bot.send_message(chat.id, text, reply_markup=reply_markup)
     except Exception as e:
@@ -157,8 +157,7 @@ Must Join Channel for Bot Updates !!
     reply_markup = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton('Support Group', url='https://t.me/SDFBots'),
-                InlineKeyboardButton('Developer', url='https://t.me/Rajaganapathy2000')
+                InlineKeyboardButton('Support Group', url='https://t.me/SDFBots')
             ]
         ]
     )
